@@ -4,6 +4,7 @@ except:
 	import os
 	print("Dependancies: paramiko, os, sys, socket.")
 	if raw_input("Install missing dependancies? (Y/n)") == "Y" or raw_input("Install missing dependancies? (Y/n)") == "y" or raw_input("Install missing dependancies? (Y/n)") == "":
+		os.system("python -m pip install --upgrade pip setuptools wheel") #Installs pip package manager
 		os.system("pip install paramiko")
 		os.system("pip install socket")
 		os.system("pip install sys")
@@ -33,7 +34,7 @@ if "-d" in sys.argv[1:]:
 else:
 	Debug = False
 try:
-	host = raw_input("[*] Enter Host > ")
+	host = raw_input("[*] Enter Hostname or IPv4 > ")
 	username = raw_input("[*] Enter Username > ")
 	input_file = raw_input("[*] Enter Password List > ")
 	if os.path.exists(input_file) == False:
